@@ -1,0 +1,53 @@
+<nb-card size="medium">
+  <ngb-tabset>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <div class="summary-container">
+          <div class="summory">
+            <div class="title">Active User</div>
+            <div class="value">{{activeUserData.currentValue['value']}}</div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <!-- <ngx-chart-panel-header [type]="period"
+                                  (periodChange)="setPeriodAndGetChartData($event)">
+          </ngx-chart-panel-header> -->
+        <active-user-chart #ordersChart [activeUserChartData]="activeUserChartData"></active-user-chart>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <div class="summary-container">
+          <div class="summory">
+            <div class="title">Registration</div>
+            <div class="value">{{registrationData.currentValue['value']}}</div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <!-- <ngx-chart-panel-header [type]="period"
+                                  (periodChange)="setPeriodAndGetChartData($event)">
+          </ngx-chart-panel-header> -->
+        <registration-chart #ordersChart [registrationChartData]="registrationChartData"></registration-chart>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+          <div class="summary-container">
+            <div class="summory">
+              <div class="title">Buy-in</div>
+              <div class="value">INR {{buyinData.currentValue['value']}}</div>
+            </div>
+          </div>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <!-- <ngx-chart-panel-header [type]="period"
+                                  (periodChange)="setPeriodAndGetChartData($event)">
+          </ngx-chart-panel-header> -->
+        <buyin-chart #buyInChart [buyinChartData]="buyInChartData"></buyin-chart>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+  <custom-daterangepicker (periodChange)="setPeriodAndGetChartData($event)"></custom-daterangepicker>
+</nb-card>

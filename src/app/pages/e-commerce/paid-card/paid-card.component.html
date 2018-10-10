@@ -1,0 +1,11 @@
+<nb-card size="xsmall">
+  <nb-card-header>
+    <span>Paid</span>
+    <div class="dropdown ghost-dropdown">
+      <custom-daterangepicker (periodChange)="setPeriodAndGetChartData($event)"></custom-daterangepicker>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <paid-card-chart #paidChart [paidChartData]="paidChartData"></paid-card-chart>
+  </nb-card-body>
+</nb-card>

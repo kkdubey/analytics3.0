@@ -1,0 +1,137 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/components/card/card.component.theme';
+@import '~@nebular/theme/styles/global/typography/typography';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+@include nb-install-component() {
+  overflow: auto;
+
+  nb-card-header {
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.675rem 4rem 0.5rem 1.25rem;
+    @include nb-rtl(padding-right, 1.25rem);
+    @include nb-rtl(padding-left, 4rem);
+  }
+
+  nb-card-body {
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .traffic-list {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    font-size: 1.25rem;
+    position: relative;
+    color: nb-theme(color-fg);
+    padding: 1rem nb-theme(card-padding);
+    border-bottom:
+      nb-theme(list-item-border-width)
+      nb-theme(card-header-border-type)
+      nb-theme(separator);
+
+    &:hover {
+      background-color: nb-theme(layout-bg);
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 6px;
+        left: 0;
+        top: 0;
+        background-color: nb-theme(color-success);
+        border-radius: nb-theme(radius);
+      }
+    }
+
+    > * {
+      flex: 2;
+    }
+
+    ngx-traffic-bar {
+      flex: 1;
+    }
+  }
+
+  .date {
+    @include nb-for-theme(corporate) {
+      color: nb-theme(color-fg-heading);
+    }
+  }
+
+  .value {
+    color: nb-theme(color-fg-heading);
+  }
+
+  nb-card-header {
+    padding: 0.25rem;
+  }
+
+  @include nb-for-theme(cosmic) {
+    .traffic-list li {
+      &:hover {
+        &::before {
+          $color-top: nb-theme(btn-success-bg);
+          $color-bottom: btn-hero-success-left-color();
+
+          background-image: linear-gradient(to top, $color-top, $color-bottom);
+          box-shadow: 0 0 16px -2px btn-hero-success-middle-color();
+        }
+      }
+    }
+  }
+
+  @include nb-for-theme(corporate) {
+    .traffic-list li {
+      border-color: nb-theme(tabs-separator);
+
+      &:first-child {
+        border-top:
+          nb-theme(list-item-border-width)
+          nb-theme(card-header-border-type)
+          nb-theme(separator);
+      }
+
+      &:hover {
+        &::before {
+          background-color: nb-theme(color-primary);
+        }
+      }
+    }
+
+    .date {
+      color: nb-theme(color-fg-heading);
+    }
+
+    .delta {
+      &.up {
+        color: text-primary();
+
+        &::before {
+          border-bottom-color: text-primary();
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    ngx-traffic-bar {
+      display: none;
+    }
+  }
+}

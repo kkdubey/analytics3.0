@@ -1,0 +1,19 @@
+@import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
+
+@include nb-install-component() {
+
+  .labelstyle {
+    border: 2px solid #40dc7e;
+    width: 225px !important;
+  }
+  @include media-breakpoint-down(is) {
+
+    .dropdown {
+      align-self: flex-end;;
+      width: 225px !important;
+    }
+  }
+}

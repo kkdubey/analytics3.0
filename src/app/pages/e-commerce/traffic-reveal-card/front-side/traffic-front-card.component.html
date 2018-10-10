@@ -1,0 +1,22 @@
+<nb-card-body>
+  <ul class="traffic-list">
+      <li>
+        <div class="date">User Name</div>
+        <div class="value">Buy-ins</div>
+        <div class="delta">Deposit</div>
+        <div class="delta">Entries</div>
+      </li>
+    <li *ngFor="let item of frontCardData; trackBy: trackByDate">
+      <div class="date">{{ item.date }}1</div>
+      <div class="value">{{ item.value }}2</div>
+      <div class="delta"
+           [class.up]="item.delta.up"
+           [class.down]="!item.delta.up">
+        {{ item.delta.value }}%
+      </div>
+      <ngx-traffic-bar [barData]="item.comparison"
+                       [successDelta]="item.delta.up">
+      </ngx-traffic-bar>
+    </li>
+  </ul>
+</nb-card-body>

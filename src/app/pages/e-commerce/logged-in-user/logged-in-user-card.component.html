@@ -1,0 +1,11 @@
+<nb-card size="xsmall">
+  <nb-card-header>
+    <span>{{loggedinUserData.Total}} Active user right now</span>
+  </nb-card-header>
+  <nb-card-body>
+    <logged-in-user-bar-chart [data]="loggedinUseBarData.data"
+                          [labels]="loggedinUseBarData.labels"
+                          [formatter]="loggedinUseBarData.formatter">
+    </logged-in-user-bar-chart>
+  </nb-card-body>
+</nb-card>

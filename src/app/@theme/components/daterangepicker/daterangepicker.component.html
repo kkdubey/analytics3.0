@@ -1,0 +1,15 @@
+<div class="dropdown form-group"
+			name="daterangeInput"
+			daterangepicker
+			[options]="options"
+			(selected)="selectedDate($event)"
+      (applyDaterangepicker)="applyDate($event)"
+    >
+  <span class="form-control fa fa-calendar labelstyle">
+      {{ daterange.start | date:'M/dd/y' }} - {{ daterange.end| date:'M/dd/y' }}
+      <span style="float: right !important;">
+        <i class="fa fa-caret-down"></i>
+      </span>
+  </span>
+
+</div>

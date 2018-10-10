@@ -1,0 +1,25 @@
+<nb-card size="small">
+  <nb-card-header>
+    <span>Traffic</span>
+    <div class="dropdown ghost-dropdown">
+      <custom-daterangepicker (periodChange)="setPeriodAndGetChartData($event)"></custom-daterangepicker>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <ul class="traffic-list">
+        <li>
+          <div class="date">User Name</div>
+          <div class="date">Buy-ins</div>
+          <div class="date">Deposit</div>
+          <div class="date">Entries</div>
+        </li>
+      <li *ngFor="let user of top10UserData.data;">
+        <div class="value">{{ user[1] }}</div>
+        <div class="value">{{ user[2] }}</div>
+        <div class="value">{{ user[3] }}</div>
+        <div class="value">{{ user[4] }}</div>
+      </li>
+    </ul>
+  </nb-card-body>
+</nb-card>
+
