@@ -48,6 +48,7 @@ export class CustomDateRangePickerComponent implements OnDestroy {
     console.log(value);
     this.daterange.start = value.start;
     this.daterange.end = value.end;
+    this.daterange.label = value.label;
   }
 
   public applyDate(e: any) {
@@ -58,7 +59,9 @@ export class CustomDateRangePickerComponent implements OnDestroy {
   }
 
   ngAfterViewInit() {
-    //this.picker.datePicker.setStartDate('2007-03-27');
+    this.picker.datePicker.setStartDate(moment().subtract(6, 'days'));
+    this.picker.datePicker.setEndDate(moment());
+    this.daterange.label = "Last 7 Days";
   }
 
   changePeriod(): void {

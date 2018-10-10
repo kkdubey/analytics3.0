@@ -51,6 +51,7 @@ import {
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  HomeLayoutComponent
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -91,7 +92,8 @@ const COMPONENTS = [
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
   MonthlyBuyChartComponent,
-  CustomDateRangePickerComponent
+  CustomDateRangePickerComponent,
+  HomeLayoutComponent
 ];
 
 const ENTRY_COMPONENTS = [

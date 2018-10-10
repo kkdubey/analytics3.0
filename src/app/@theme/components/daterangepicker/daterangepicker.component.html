@@ -6,7 +6,10 @@
       (applyDaterangepicker)="applyDate($event)"
     >
   <span class="form-control fa fa-calendar labelstyle">
-      {{ daterange.start | date:'M/dd/y' }} - {{ daterange.end| date:'M/dd/y' }}
+      <span *ngIf="daterange && daterange.label && daterange.label.toUpperCase() !== 'CUSTOM RANGE'">{{daterange.label}}</span>
+      <span *ngIf="daterange.label && daterange.label.toUpperCase() === 'CUSTOM RANGE'">
+        {{ daterange.start | date:'M/dd/y' }} - {{ daterange.end| date:'M/dd/y' }}
+      </span>      
       <span style="float: right !important;">
         <i class="fa fa-caret-down"></i>
       </span>
