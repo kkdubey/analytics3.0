@@ -10,9 +10,6 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <!-- <ngx-chart-panel-header [type]="period"
-                                  (periodChange)="setPeriodAndGetChartData($event)">
-          </ngx-chart-panel-header> -->
         <active-user-chart #ordersChart [activeUserChartData]="activeUserChartData"></active-user-chart>
       </ng-template>
     </ngb-tab>
@@ -26,9 +23,6 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <!-- <ngx-chart-panel-header [type]="period"
-                                  (periodChange)="setPeriodAndGetChartData($event)">
-          </ngx-chart-panel-header> -->
         <registration-chart #ordersChart [registrationChartData]="registrationChartData"></registration-chart>
       </ng-template>
     </ngb-tab>
@@ -42,9 +36,6 @@
           </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <!-- <ngx-chart-panel-header [type]="period"
-                                  (periodChange)="setPeriodAndGetChartData($event)">
-          </ngx-chart-panel-header> -->
         <buyin-chart #buyInChart [buyinChartData]="buyInChartData"></buyin-chart>
       </ng-template>
     </ngb-tab>

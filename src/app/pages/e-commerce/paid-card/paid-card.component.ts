@@ -1,6 +1,7 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
+import * as moment from 'moment';
 
 import { OrdersProfitChartService } from '../../../@core/data/orders-profit-chart.service';
 
@@ -31,11 +32,12 @@ export class PaidCardComponent implements OnDestroy {
     ,private metricsGraphViewService: MetricsGraphViewService) {
       tabsetConfig.justify = 'fill';
       // tabsetConfig.type = 'pills';
-
-    this.getActiveUserChartData("2018-09-10","2018-09-18");
+    let startDate = moment().subtract(6, 'days').format('YYYY-MM-DD');
+    let endDate = moment().format('YYYY-MM-DD');
+    this.getActiveUserChartData(startDate, endDate);
   }
 
-  setPeriodAndGetChartData(value: any): void {debugger;
+  setPeriodAndGetChartData(value: any): void {
     let startDate = value.start.format('YYYY-MM-DD');
     let endDate = value.end.format('YYYY-MM-DD');
     this.getActiveUserChartData(startDate, endDate);

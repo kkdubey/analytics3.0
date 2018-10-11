@@ -9,7 +9,7 @@ import { MetricsGraphViewService } from '../../../@core/data/metricsgraphview.se
 })
 export class UserStaticsComponent {
   constructor(private metricsGraphViewService: MetricsGraphViewService) {
-    // this.metricsGraphViewService.getActiveUser("2018-09-18","2018-09-10","","buyin").subscribe(res => {debugger;
+    // this.metricsGraphViewService.getActiveUser("2018-09-18","2018-09-10","","buyin").subscribe(res => {
     //   console.log(res);
     // });
   }

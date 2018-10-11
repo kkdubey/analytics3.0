@@ -1,8 +1,8 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
+import * as moment from 'moment';
 
-import { TrafficList } from '../../../@core/data/traffic-list.service';
 import { MetricsGraphViewService } from '../../../@core/data/metricsgraphview.service';
 
 @Component({
@@ -14,7 +14,6 @@ export class Top10UserCardComponent implements OnDestroy {
 
   private alive = true;
 
-  @Input() frontCardData: TrafficList;
 
   currentTheme: string;
   top10UserData:any = {};
@@ -26,6 +25,10 @@ export class Top10UserCardComponent implements OnDestroy {
       .subscribe(theme => {
         this.currentTheme = theme.name;
     });
+
+    let startDate = moment().subtract(6, 'days').format('YYYY-MM-DD');
+    let endDate = moment().format('YYYY-MM-DD');
+    this.getTop10UserChartData(startDate, endDate);
   }
 
   trackByDate(_, item) {
@@ -35,10 +38,10 @@ export class Top10UserCardComponent implements OnDestroy {
   setPeriodAndGetChartData(value: any): void {
     let startDate = value.start.format('YYYY-MM-DD');
     let endDate = value.end.format('YYYY-MM-DD');
-    this.getActiveUserChartData(startDate, endDate);
+    this.getTop10UserChartData(startDate, endDate);
   }
 
-  getActiveUserChartData(startDate: string, endDate: string) {
+  getTop10UserChartData(startDate: string, endDate: string) {
     this.metricsGraphViewService.getTop10User(startDate, endDate).subscribe(res => {
       this.top10UserData = JSON.parse(res['child']);
     });
