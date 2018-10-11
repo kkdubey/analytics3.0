@@ -9,4 +9,5 @@ export * from './layout-direction-switcher/layout-direction-switcher.component';
 export * from './theme-switcher/themes-switcher-list/themes-switcher-list.component';
 export * from './monthly-buy-chart/monthly-buy-chart.component';
 export * from './daterangepicker/daterangepicker.component';
+export * from './header/home-header.component';
 

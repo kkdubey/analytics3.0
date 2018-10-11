@@ -22,7 +22,7 @@ import { MetricsGraphViewService } from '../../../@core/data/metricsgraphview.se
   template: `
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
       <nb-layout-header fixed>
-        <ngx-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></ngx-header>
+        <home-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></home-header>
       </nb-layout-header>
 
       <nb-layout-column class="main-content">

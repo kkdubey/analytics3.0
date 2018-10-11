@@ -37,7 +37,8 @@ import {
   TinyMCEComponent,
   ThemeSwitcherListComponent,
   MonthlyBuyChartComponent,
-  CustomDateRangePickerComponent
+  CustomDateRangePickerComponent,
+  HomeHeaderComponent
 } from './components';
 import {
   CapitalizePipe,
@@ -93,7 +94,8 @@ const COMPONENTS = [
   TwoColumnsLayoutComponent,
   MonthlyBuyChartComponent,
   CustomDateRangePickerComponent,
-  HomeLayoutComponent
+  HomeLayoutComponent,
+  HomeHeaderComponent
 ];
 
 const ENTRY_COMPONENTS = [
