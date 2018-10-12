@@ -1,5 +1,205 @@
 @import '../../@theme/styles/themes';
-
 @include nb-install-component() {
-  
+    .web {
+        font-family: 'Open Sans', sans-serif;
+        margin: 0px;
+        padding: 0px !important;
+        overflow-x: hidden;
+        color: #555555;
+    }
+    #banner {
+        background-color: #000000;
+        background-image: url('https://starpick.analytics.ruca.tech/ui/homepage/assets/images/homepagebg.jpg');
+        overflow: hidden;
+        padding: 200px 0 90px;
+        background-position: center;
+        width: 100%;
+    }
+    .parallex-bg {
+        background-attachment: fixed;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    .div_zindex {
+        position: relative;
+        z-index: 1;
+    }
+    .white-text,
+    .white-text h1,
+    .white-text h2,
+    .white-text h3,
+    .white-text h4,
+    .white-text h5,
+    .white-text h6,
+    .white-text p {
+        color: #fff;
+    }
+    .intro_text {
+        padding: 90px 0;
+    }
+    .intro_text h1 {
+        font-size: 70px;
+        margin: 0 auto 20px;
+        text-transform: capitalize;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #111111;
+        font-weight: 800;
+        margin: 0 auto 15px;
+    }
+    .intro_text h3 {
+        font-size: 37px;
+        font-weight: 300;
+        line-height: 50px;
+        margin: 0 auto 40px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    .btn.btn-lg {
+        font-size: 22px;
+        line-height: 30px;
+        padding: 18px 50px;
+    }
+    .btn {
+        background: #dc3545;
+        border: medium none;
+        border-radius: 0px;
+        color: #ffffff;
+        font-size: 21px;
+        font-weight: 300;
+        line-height: 30px;
+        margin: auto;
+        padding: 12px 38px;
+        transition: all 0.3s linear 0s;
+        -moz-transition: all 0.3s linear 0s;
+        -o-transition: all 0.3s linear 0s;
+        -webkit-transition: all 0.3s linear 0s;
+        -ms-transition: all 0.3s linear 0s;
+    }
+    .btn-group-lg>.btn,
+    .btn-lg {
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333;
+        border-radius: 6px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .video_bg .dark-overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .dark-overlay {
+        background: rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    .section-padding {
+        padding: 120px 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .features-box {
+        background: #ffffff none repeat scroll 0 0;
+        border-radius: 8px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+        text-align: center;
+        margin: 20px auto 0;
+        transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        -webkit-transition-duration: 0.3s;
+        -ms-transition-duration: 0.3s;
+    }
+    h5 {
+        font-size: 26px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #111111;
+        font-weight: 800;
+        margin: 0 auto 15px;
+    }
+    .h5,
+    h5 {
+        font-size: 14px;
+    }
+    .h4,
+    .h5,
+    .h6,
+    h4,
+    h5,
+    h6 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .secondary-bg {
+        background-color: #1e2127;
+        color: #fff;
+        width: 100%;
+    }
+    .footer_links {
+        padding: 0px;
+        margin: 60px auto;
+    }
+    ul,
+    ol {
+        margin: 0 auto 20px;
+    }
+    .footer_links li a {
+        display: inline-block;
+        color: #a0a0a0;
+        position: relative;
+        padding-left: 18px;
+    }
+    .footer_bottom {
+        background: #15181d;
+        padding: 15px 0;
+    }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
