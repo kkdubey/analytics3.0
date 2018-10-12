@@ -35,7 +35,7 @@ export class LoggedinUserCardComponent implements OnDestroy {
     for(var i=30;i>=1;i--){
       xdata.push(i+' Min');
     }
-    this.metricsGraphViewService.getLiveUser().subscribe(res => {debugger;
+    this.metricsGraphViewService.getLiveUser().subscribe(res => {
       this.loggedinUserData = JSON.parse(res['child']);
       this.loggedinUseBarData.data = this.loggedinUserData.chart;
       this.loggedinUseBarData.labels = xdata;

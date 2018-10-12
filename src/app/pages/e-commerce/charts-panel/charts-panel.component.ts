@@ -1,12 +1,7 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
 import { NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
-
-import { OrdersChartComponent } from './charts/orders-chart.component';
-import { ProfitChartComponent } from './charts/profit-chart.component';
-import { OrdersChart } from '../../../@core/data/orders-chart.service';
-import { ProfitChart } from '../../../@core/data/profit-chart.service';
-import { OrdersProfitChartService, OrderProfitChartSummary } from '../../../@core/data/orders-profit-chart.service';
+import * as moment from 'moment';
 
 import { MetricsGraphViewService } from '../../../@core/data/metricsgraphview.service';
 
@@ -20,10 +15,6 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
 
   private alive = true;
 
-  chartPanelSummary: OrderProfitChartSummary[];
-  period: string = 'week';
-  ordersChartData: OrdersChart;
-  profitChartData: ProfitChart;
   buyInChartData ={
     chartLabel: [],
     linesData:[]
@@ -46,57 +37,26 @@ export class ECommerceChartsPanelComponent implements OnDestroy {
     currentValue: { },
   };
 
-  @ViewChild('ordersChart') ordersChart: OrdersChartComponent;
-  @ViewChild('profitChart') profitChart: ProfitChartComponent;
-
-  constructor(private ordersProfitChartService: OrdersProfitChartService
-    ,tabsetConfig: NgbTabsetConfig
-    ,private metricsGraphViewService: MetricsGraphViewService) {
+  constructor(
+    tabsetConfig: NgbTabsetConfig,
+    private metricsGraphViewService: MetricsGraphViewService) {
       tabsetConfig.justify = 'fill';
       // tabsetConfig.type = 'pills';
-    this.ordersProfitChartService.getOrderProfitChartSummary()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((summary) => {
-        this.chartPanelSummary = summary;
-      });
 
-    this.getOrdersChartData(this.period);
-    this.getProfitChartData(this.period);
-    this.getActiveUserChartData("2018-09-10","2018-09-18");
-    this.getRegistrationChartData("2018-09-10","2018-09-18");
-    this.getBuyinChartData("2018-09-10","2018-09-18");
-  }
+    let startDate = moment().subtract(6, 'days').format('YYYY-MM-DD');
+    let endDate = moment().format('YYYY-MM-DD');
 
-  setPeriodAndGetChartData(value: any): void {debugger;
-    let startDate = value.start.format('YYYY-MM-DD');
-    let endDate = value.end.format('YYYY-MM-DD');
     this.getActiveUserChartData(startDate, endDate);
     this.getRegistrationChartData(startDate, endDate);
     this.getBuyinChartData(startDate, endDate);
   }
 
-  changeTab(selectedTab) {
-    if (selectedTab.tabTitle === 'Profit') {
-      this.profitChart.resizeChart();
-    } else {
-      this.ordersChart.resizeChart();
-    }
-  }
-
-  getOrdersChartData(period: string) {
-    this.ordersProfitChartService.getOrdersChartData(period)
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(ordersChartData => {
-        this.ordersChartData = ordersChartData;
-      });
-  }
-
-  getProfitChartData(period: string) {
-    this.ordersProfitChartService.getProfitChartData(period)
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(profitChartData => {
-        this.profitChartData = profitChartData;
-      });
+  setPeriodAndGetChartData(value: any): void {
+    let startDate = value.start.format('YYYY-MM-DD');
+    let endDate = value.end.format('YYYY-MM-DD');
+    this.getActiveUserChartData(startDate, endDate);
+    this.getRegistrationChartData(startDate, endDate);
+    this.getBuyinChartData(startDate, endDate);
   }
 
   getBuyinChartData(startDate: string, endDate: string) {

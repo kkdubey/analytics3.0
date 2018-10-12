@@ -82,7 +82,7 @@ export class RegistrationChartComponent implements AfterViewInit, OnDestroy, OnC
         backgroundColor: eTheme.tooltipBg,
         borderColor: eTheme.tooltipBorderColor,
         borderWidth: 3,
-        // formatter: (params) => {debugger;
+        // formatter: (params) => {
         //   return Math.round(parseInt(params.value, 10));
         // },
         extraCssText: eTheme.tooltipExtraCss,
