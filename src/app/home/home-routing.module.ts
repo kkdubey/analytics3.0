@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CustomLoginPageComponent } from './login-page/custom-login-page.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [{
   path: '',
@@ -11,7 +13,12 @@ const routes: Routes = [{
     {
     path: 'page',
     component: HomePageComponent,
-  }, {
+  },
+  {
+    path: 'login',
+    component: CustomLoginPageComponent,
+  },
+  {
     path: '',
     redirectTo: 'page',
     pathMatch: 'full',
